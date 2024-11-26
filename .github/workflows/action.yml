@@ -1,0 +1,25 @@
+name: Shell Commands with the Checkout Action
+# Workflow name
+
+on: [push]
+# Trigger workflow on push
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    # Runner OS
+
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+
+      - name: Checkout
+        uses: actions/checkout@v1
+        # Checkout action to clone the repo
+
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
